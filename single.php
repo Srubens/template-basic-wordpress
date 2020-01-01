@@ -36,6 +36,15 @@
 	           	 		<?php comments_number(''); ?>
 	           	 	</p>
 
+	           	 	<!-- COLOCANDO A FUNÇÃO COMENTARIOS -->
+	           	 	<?php 
+ 					   
+ 					   if( comments_open() ){
+ 					   	  comments_template();
+ 					   }
+
+	           	 	?>
+
            	 	</article>
            	<?php } ?>
         <?php } ?>
