@@ -1,16 +1,18 @@
 <?php get_header(); ?>
-
+<!-- A BASE DO CATEGORY É O INDEX -->
 <section>
 
    <div>
+
+   		<?php echo "<h1>", the_archive_title() ,"</h1>"; ?>
       
 		<?php if( have_posts() ){ ?>
            	<?php while( have_posts() ){ ?>
            	 	<?php the_post(); ?>
 
-				<!-- FOI PARA PASTA TEMPLATE_PARTS -->
+           	 	<!-- FOI PARA PASTA TEMPLATE_PARTS -->
 				<?php get_template_part('template_parts/post'); ?>
-           	 	
+
            	<?php } ?>
         <?php } ?>
 
