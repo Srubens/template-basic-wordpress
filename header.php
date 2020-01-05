@@ -9,6 +9,7 @@
  PARA COLOCAR UMA NOVA CLASS É SO COLOCAR O NOME DA CLASS DENTRO DA FUNÇÃO BODY_CLASS -->
 <body <?php body_class(); ?> >
    <header>
+      
    	<h1>Ola mundo!</h1>
 
    	<?php 
