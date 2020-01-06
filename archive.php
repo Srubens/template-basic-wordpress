@@ -3,7 +3,7 @@
 <section>
 
    <div>
-
+    
    		<?php echo "<h1>", the_archive_title() ,"</h1>"; ?>
       
 		<?php if( have_posts() ){ ?>
