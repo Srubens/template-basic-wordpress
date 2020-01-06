@@ -36,12 +36,36 @@
 	           	 		<?php comments_number(''); ?>
 	           	 	</p>
 
-	           	 	<!-- COLOCANDO A FUNÇÃO COMENTARIOS -->
 	           	 	<?php 
- 					   
- 					   if( comments_open() ){
- 					   	  comments_template();
- 					   }
+
+					$categories = get_the_category();
+
+           	 	    $rt_query = new WP_Query(array(
+           	 	   	  'posts_per_page' => 3,
+           	 	   	  'post__not_in' => array( $post->ID ),
+           	 	   	  'cat' => $categories[0]->term_id
+           	 	    ));
+
+           	 	    /* 'posts_per_page' => 3 QUANTOS POSTS RELACIONADO QUEREMOS
+           	 	   	   'post__not_in' => array( $post->ID ) EXCLUI O PROPRIO POST DOS RELACIONANDOS
+           	 	   	   'cat' => $categories[0]->term_id PEGA A CATEGORIA EM QUESTÃO
+           	 	    */
+  
+           	 	    if( $rt_query->have_posts() ){
+           	 	    	echo "<h2>Posts Relacionados:</h2>";
+           	 	 	   while( $rt_query->have_posts() ){
+           	 	 		   $rt_query->the_post();
+           	 	 		   get_template_part('template_parts/related_post');
+           	 	 	   }
+
+           	 	 	   /* IMPORTANTE */
+           	 	 	   wp_reset_postdata();
+           	 	    }
+
+	           	 	// COLOCANDO A FUNÇÃO COMENTARIOS 					   
+					if( comments_open() ){
+				   	  comments_template();
+				    }
 
 	           	 	?>
 
