@@ -9,8 +9,17 @@
  PARA COLOCAR UMA NOVA CLASS É SO COLOCAR O NOME DA CLASS DENTRO DA FUNÇÃO BODY_CLASS -->
 <body <?php body_class(); ?> >
    <header>
+
+      <!-- COLOCANDO LOGO NO TEMA -->
+      <?php 
+
+         if( has_custom_logo() ){
+            the_custom_logo();
+         } 
+
+       ?>
       
-   	<h1>Ola mundo!</h1>
+   	<h1><a href="<?= home_url('/') ?>"><?php bloginfo('name'); ?></a></h1>
 
    	<?php 
    	   // PARA O MENU FICAR ATIVADO

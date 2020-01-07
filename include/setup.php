@@ -20,6 +20,12 @@ function rt_after_setup(){
 	// SUPORTE PARA IMAGENS 
 	add_theme_support('post-thumbnails');
 
+	//SUPORTE PARA TITLE DO TEMA
+	add_theme_support('title-tag');
+
+	//LOGO CUSTOMIZADA
+	add_theme_support('custom-logo');
+
 	//SUPORTE PARA MENUS
 	add_theme_support('menus');
 
