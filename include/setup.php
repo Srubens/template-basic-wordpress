@@ -32,6 +32,9 @@ function rt_after_setup(){
 	register_nav_menu('primary', __('Primary Menu','temaOne'));
 	register_nav_menu('footer', 'Menu Rodapé');
 
+	// REMOVENDO A BARRA DO ADMIN
+	// show_admin_bar(false);
+
 }
 
 /***
